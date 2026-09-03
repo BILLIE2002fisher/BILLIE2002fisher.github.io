@@ -1,15 +1,458 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
+
 <head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
     <title>Billie Yu</title>
+
+
+    <style>
+
+        /* =========================
+           整个网页
+           ========================= */
+
+        body {
+            margin: 0;
+            background-color: #f4f1eb;
+            color: #1f1f1f;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+           顶部导航栏
+           ========================= */
+
+        .navbar {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 30px 40px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+
+        .nav-links a {
+            color: #1f1f1f;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+
+        .nav-links a:hover {
+            opacity: 0.5;
+        }
+
+
+        /* =========================
+           页面主体统一宽度
+           ========================= */
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+
+        /* =========================
+           首页大区域
+           ========================= */
+
+        .hero {
+            min-height: 75vh;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+
+        .hero h1 {
+            font-size: 72px;
+            font-weight: 400;
+            line-height: 1.05;
+            margin: 0;
+            max-width: 800px;
+        }
+
+
+        .hero .subtitle {
+            margin-top: 30px;
+            font-size: 21px;
+            color: #656565;
+            max-width: 600px;
+        }
+
+
+        /* =========================
+           每一个内容区域
+           ========================= */
+
+        .section {
+            padding: 100px 0;
+            border-top: 1px solid #d7d2ca;
+        }
+
+
+        .section-title {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 50px;
+        }
+
+
+        /* =========================
+           Education / Experience
+           ========================= */
+
+        .item {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+
+
+        .item h3 {
+            font-size: 26px;
+            font-weight: 400;
+            margin: 0;
+        }
+
+
+        .item p {
+            margin: 0;
+            color: #656565;
+            font-size: 18px;
+        }
+
+
+        /* =========================
+           Content 链接
+           ========================= */
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+
+        .content-card {
+            border: 1px solid #cfc9c0;
+            padding: 35px;
+            min-height: 150px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            text-decoration: none;
+            color: #1f1f1f;
+
+            transition: 0.3s;
+        }
+
+
+        .content-card:hover {
+            background-color: #1f1f1f;
+            color: #f4f1eb;
+        }
+
+
+        .content-card h3 {
+            margin: 0;
+            font-size: 25px;
+            font-weight: 400;
+        }
+
+
+        .arrow {
+            font-size: 22px;
+        }
+
+
+        /* =========================
+           Contact
+           ========================= */
+
+        .contact {
+            padding: 100px 0 70px;
+        }
+
+
+        .contact h2 {
+            font-size: 48px;
+            font-weight: 400;
+            margin-bottom: 40px;
+        }
+
+
+        .contact-links {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+
+        .contact-links a {
+            color: #1f1f1f;
+            text-decoration: none;
+            border-bottom: 1px solid #1f1f1f;
+        }
+
+
+        /* =========================
+           手机屏幕
+           ========================= */
+
+        @media (max-width: 700px) {
+
+            .navbar {
+                padding: 25px 20px;
+            }
+
+            .nav-links {
+                gap: 12px;
+                font-size: 13px;
+            }
+
+            .container {
+                padding: 0 20px;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .item {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
 </head>
+
 
 <body>
 
-    <h1>Hello, I'm Billie.</h1>
 
-    <p>Welcome to my personal website.</p>
+    <!-- 顶部导航 -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            Billie Yu
+        </div>
+
+        <nav class="nav-links">
+
+            <a href="#education">Education</a>
+
+            <a href="#experience">Experience</a>
+
+            <a href="#content">Content</a>
+
+            <a href="#contact">Contact</a>
+
+        </nav>
+
+    </header>
+
+
+
+    <main class="container">
+
+
+        <!-- 首页大标题 -->
+
+        <section class="hero">
+
+            <h1>
+                Hello, I'm Billie.
+            </h1>
+
+            <p class="subtitle">
+                MSc in Stochastics and Financial Mathematics.
+                Interested in quantitative finance,
+                data science and artificial intelligence.
+            </p>
+
+        </section>
+
+
+
+        <!-- Education -->
+
+        <section class="section" id="education">
+
+            <h2 class="section-title">
+                Education
+            </h2>
+
+
+            <div class="item">
+
+                <h3>
+                    University of Amsterdam
+                </h3>
+
+                <p>
+                    MSc Stochastics and Financial Mathematics
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Experience -->
+
+        <section class="section" id="experience">
+
+            <h2 class="section-title">
+                Experience
+            </h2>
+
+
+            <div class="item">
+
+                <h3>
+                    ING Bank
+                </h3>
+
+                <p>
+                    ALM Model Developer Intern
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Content -->
+
+        <section class="section" id="content">
+
+            <h2 class="section-title">
+                My Content
+            </h2>
+
+
+            <div class="content-grid">
+
+
+                <a class="content-card"
+                   href="https://space.bilibili.com/696572453"
+                   target="_blank">
+
+                    <h3>Bilibili</h3>
+
+                    <span class="arrow">↗</span>
+
+                </a>
+
+
+                <a class="content-card"
+                   href="https://www.youtube.com/@billieyu"
+                   target="_blank">
+
+                    <h3>YouTube</h3>
+
+                    <span class="arrow">↗</span>
+
+                </a>
+
+
+                <a class="content-card"
+                   href="你的微信文章链接"
+                   target="_blank">
+
+                    <h3>Writing</h3>
+
+                    <span class="arrow">↗</span>
+
+                </a>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Contact -->
+
+        <section class="contact" id="contact">
+
+            <h2>
+                Let's connect.
+            </h2>
+
+
+            <div class="contact-links">
+
+                <a href="你的LinkedIn"
+                   target="_blank">
+                    LinkedIn
+                </a>
+
+                <a href="https://github.com/BILLIE2002fisher"
+                   target="_blank">
+                    GitHub
+                </a>
+
+                <a href="https://www.youtube.com/@billieyu"
+                   target="_blank">
+                    YouTube
+                </a>
+
+                <a href="https://space.bilibili.com/696572453"
+                   target="_blank">
+                    Bilibili
+                </a>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
 
 </body>
+
 </html>
